@@ -1,0 +1,221 @@
+:root {
+    --primary: #FF6600;
+    --dark: #000000;
+    --light: #FFFFFF;
+    --gray: #1A1A1A;
+    --text-gray: #CCCCCC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.text-orange { color: var(--primary); }
+.text-center { text-align: center; }
+.bg-dark { background-color: var(--gray); }
+
+.section { padding: 80px 0; }
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:active { transform: scale(0.95); }
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background: var(--primary);
+    color: var(--dark);
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-highlights {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.hero-highlights li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.urgency-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Countdown Bar */
+.countdown-bar {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+/* Grid Layouts */
+.details-grid, .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.detail-card, .option-box {
+    background: var(--dark);
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.detail-card h3, .option-box h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Prizes */
+.prize-card {
+    background: #111;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+}
+
+.prize-card.gold { border-color: var(--primary); }
+.prize-rank { font-weight: 700; color: var(--text-gray); }
+.prize-amount { font-size: 3rem; font-weight: 900; margin: 10px 0; color: var(--primary); }
+
+/* Gallery Placeholder */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 300px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #555;
+}
+
+/* FAQ */
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.faq-item h4 { color: var(--primary); margin-bottom: 5px; }
+
+/* Footer */
+.footer {
+    padding: 40px 0 100px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+}
