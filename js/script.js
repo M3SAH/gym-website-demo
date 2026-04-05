@@ -1,35 +1,32 @@
-// Countdown Timer Logic
-const countdownDate = new Date("April 6, 2026 00:00:00").getTime();
+// Optimized Timer for Mobile
+const challengeDate = new Date("April 6, 2026 00:00:00").getTime();
 
-const updateTimer = () => {
+function updateCountdown() {
     const now = new Date().getTime();
-    const distance = countdownDate - now;
+    const diff = challengeDate - now;
 
-    if (distance < 0) {
-        document.getElementById("timer").innerHTML = "CHALLENGE STARTED!";
+    if (diff < 0) {
+        document.getElementById("timer").innerText = "LIVE NOW!";
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML = 
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-};
+    document.getElementById("timer").innerText = `${d}d ${h}h ${m}m ${s}s`;
+}
 
-// Update every second
-setInterval(updateTimer, 1000);
-updateTimer(); // Initial call
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
-// Simple scroll reveal effect for CTA visibility
-const stickyCta = document.querySelector('.sticky-cta');
+// Show Sticky CTA only after scrolling past Hero
+const mobileCta = document.querySelector('.mobile-cta-bar');
 window.addEventListener('scroll', () => {
-    // Hide sticky CTA when very close to top to clean up hero view
-    if (window.scrollY < 200) {
-        stickyCta.style.display = 'none';
+    if (window.scrollY > 400) {
+        mobileCta.style.display = 'block';
     } else {
-        stickyCta.style.display = 'flex';
+        mobileCta.style.display = 'none';
     }
 });
